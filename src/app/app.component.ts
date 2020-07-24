@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoadingService } from './infrastructure/services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gw2-for-fun';
+  title = 'GW2 for fun';
+
+  showLoadingBar: boolean = false;
+
+  constructor(private loadingService: LoadingService) {
+    this.loadingService.isLoading$
+      .subscribe(loading => setTimeout(() => this.showLoadingBar = loading));
+  }
+
+
 }

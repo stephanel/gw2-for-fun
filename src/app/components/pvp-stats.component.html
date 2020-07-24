@@ -1,46 +1,64 @@
 <div class="container">
 
-    <div class="card">
-        <h4>General stats</h4>
-
-        <div>
-            <span class="title"><strong>Rank</strong></span>
-            <span>{{this.pvpStats?.pvp_rank}}</span>
+    <div class="clr-row">
+        <div class="clr-col-lg-6 clr-col-12">
+            <div class="card">
+                <div class="card-header">
+                    General stats
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Rank</strong></span>
+                        <span>{{this.pvpStats?.pvp_rank}}</span>
+                    </div>
+                    <div>
+                        <span class="title"><strong>Points</strong></span>
+                        <span>{{this.pvpStats?.pvp_rank_points}}</span>
+                    </div>
+                    <div>
+                        <span class="title"><strong>Rollovers</strong></span>
+                        <span>{{this.pvpStats?.pvp_rank_rollovers}}</span>
+                    </div>    
+                    <div>
+                        <span class="title">&nbsp;</span><span>&nbsp;</span>
+                    </div>    
+                    <div>
+                        <span class="title">&nbsp;</span><span>&nbsp;</span>
+                    </div>    
+                </div>
+            </div>
         </div>
-        <div>
-            <span class="title"><strong>Points</strong></span>
-            <span>{{this.pvpStats?.pvp_rank_points}}</span>
+    
+        <div class="clr-col-lg-6 clr-col-12">
+            <div class="card">
+                <div class="card-header">
+                    Total wins/losses stats
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Wins</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.wins}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Losses</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.losses}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Desertions</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.desertions}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Byes</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.byes}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Forfeits</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.forfeits}}</span>
+                    </div>    
+                </div>
+            </div>
         </div>
-        <div>
-            <span class="title"><strong>Rollovers</strong></span>
-            <span>{{this.pvpStats?.pvp_rank_rollovers}}</span>
-        </div>    
-    
     </div>
-
-    <div class="card">
-        <h4>Total wins/losses stats</h4>
-        <div>
-            <span class="title"><strong>Wins</strong></span>
-            <span>{{this.pvpStats?.aggregate?.wins}}</span>
-        </div>    
-        <div>
-            <span class="title"><strong>Losses</strong></span>
-            <span>{{this.pvpStats?.aggregate?.losses}}</span>
-        </div>    
-        <div>
-            <span class="title"><strong>Desertions</strong></span>
-            <span>{{this.pvpStats?.aggregate?.desertions}}</span>
-        </div>    
-        <div>
-            <span class="title"><strong>Byes</strong></span>
-            <span>{{this.pvpStats?.aggregate?.byes}}</span>
-        </div>    
-        <div>
-            <span class="title"><strong>Forfeits</strong></span>
-            <span>{{this.pvpStats?.aggregate?.forfeits}}</span>
-        </div>    
     
-    </div>
 
 </div>
