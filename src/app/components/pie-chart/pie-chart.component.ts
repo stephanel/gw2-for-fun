@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WinLossStats } from 'src/app/models/gw2api-pvp-stats-result';
 
-declare const CanvasJS: any;
+import * as d3pie from '../../../assets/js/d3pie.min';
 
 @Component({
     selector: 'pie-chart',
@@ -9,74 +9,139 @@ declare const CanvasJS: any;
     templateUrl: 'pie-chart.component.html'
 })
 export class PieChartComponent implements OnInit {
-
-    @Input() stats: WinLossStats;
     
-        // [
-        //     // this.stats.wins,
-        //     // this.stats.losses,
-        //     // this.stats.desertions,
-        //     // this.stats.byes,
-        //     // this.stats.forfeits
-        //     20, 20, 20, 20, 20
-        // ],
-        // labels: ['Wins', 'Losses', 'Desertions', 'Byes', 'Forfeits'],
+    @Input() id: number;
 
-    ngOnInit() {
-        // https://canvasjs.com/angular-charts/
-
-        let chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            
-            title:{
-                text:"Fortune 500 Companies by Country"
-            },
-            axisX:{
-                interval: 1
-            },
-            axisY2:{
-                interlacedColor: "rgba(1,77,101,.2)",
-                gridColor: "rgba(1,77,101,.1)",
-                title: "Number of Companies"
-            },
-            data: [{
-                type: "bar",
-                name: "companies",
-                axisYType: "secondary",
-                color: "#014D65",
-                dataPoints: [
-                    { y: 3, label: "Wins" },
-                    { y: 7, label: "Losses" },
-                    { y: 5, label: "Desertions" },
-                    { y: 9, label: "Byes" },
-                    { y: 7, label: "Forfeits" }
-                ]
-            }]
-        });
-
-        // let chart = new CanvasJS.Chart("chartContainer", {
-        //     theme: "light2",
-        //     animationEnabled: true,
-        //     exportEnabled: false,
-        //     // title:{
-        //     //     text: "Monthly Expense"
-        //     // },
-        //     data: [{
-        //         type: "pie",
-        //         showInLegend: false,
-        //         toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
-        //         indexLabel: "{name} - #percent%",
-        //         dataPoints: [
-        //             { y: 300, name: "Wins" },
-        //             { y: 120, name: "Losses" },
-        //             { y: 300, name: "Desertions" },
-        //             { y: 800, name: "Byes" },
-        //             { y: 150, name: "Forfeits" },
-        //         ]
-        //     }]
-        // });
-            
-        chart.render();
+    _stats: WinLossStats;
+    @Input() set stats(value: WinLossStats) {
+        if(value) {
+            this._stats = value;
+            this.drawPie();
+        }
     }
 
+    // [
+    //     // this.stats.wins,
+    //     // this.stats.losses,
+    //     // this.stats.desertions,
+    //     // this.stats.byes,
+    //     // this.stats.forfeits
+    //     20, 20, 20, 20, 20
+    // ],
+    // labels: ['Wins', 'Losses', 'Desertions', 'Byes', 'Forfeits'],
+
+    constructor() {
+    }
+
+    ngOnInit() { }
+
+    drawPie() {
+        if(!this._stats || !this.id) {
+            return;
+        }
+        // http://d3pie.org/
+        var pie = new d3pie(`pieChart${this.id}`, {
+            "header": {
+                "title": {
+                    "fontSize": 24,
+                    "font": "open sans"
+                },
+                "subtitle": {
+                    "color": "#999999",
+                    "fontSize": 12,
+                    "font": "open sans"
+                },
+                "titleSubtitlePadding": 0
+            },
+            "footer": {
+                "color": "#999999",
+                "fontSize": 10,
+                "font": "open sans",
+                "location": "bottom-left"
+            },
+            "size": {
+                "canvasHeight": 150,
+                "canvasWidth": 280,
+                "pieOuterRadius": "87%"
+            },
+            "data": {
+                "sortOrder": "value-desc",
+                "content": [
+                    {
+                        "label": "Wins",
+                        "value": this._stats.wins,
+                        "color": "#86f71a"
+                    },
+                    {
+                        "label": "Losses",
+                        "value": this._stats.losses,
+                        "color": "#d1c87f"
+                    },
+                    {
+                        "label": "Desertions",
+                        "value": this._stats.desertions,
+                        "color": "#7d9058"
+                    },
+                    {
+                        "label": "Byes",
+                        "value": this._stats.byes,
+                        "color": "#44b9b0"
+                    },
+                    {
+                        "label": "Forfeits",
+                        "value": this._stats.forfeits,
+                        "color": "#7c37c0"
+                    }
+                ]
+            },
+            "labels": {
+                "outer": {
+                    "format": "none",
+                    "pieDistance": 20
+                },
+                "mainLabel": {
+                    "fontSize": 11
+                },
+                percentage: {
+                    color: "#ffffff",
+                    decimalPlaces: 0
+                },
+                value: {
+                    color: "#adadad",
+                    fontSize: 11
+                },
+                lines: {
+                    enabled: true
+                },
+                truncation: {
+                    enabled: true
+                }
+            },
+            "tooltips": {
+                "enabled": true,
+                "type": "placeholder",
+                "string": "{label}: {value}",
+                "styles": {
+                    "backgroundOpacity": 0.64,
+                    "borderRadius": 3,
+                    "font": "open sans",
+                    "fontSize": 11,
+                    "padding": 6
+                }
+            },
+            "effects": {
+                "pullOutSegmentOnClick": {
+                    "effect": "linear",
+                    "speed": 400,
+                    "size": 8
+                }
+            },
+            "misc": {
+                "gradient": {
+                    "enabled": true,
+                    "percentage": 100
+                }
+            }
+        });
+    }
 }

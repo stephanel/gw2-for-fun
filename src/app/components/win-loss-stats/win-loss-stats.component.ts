@@ -7,6 +7,7 @@ import { WinLossStats } from '../../models/gw2api-pvp-stats-result';
 })
 export class WinLossStatsComponent {
 
+    @Input() id: number;
     @Input() stats: WinLossStats;
     @Input() title: string;
 }

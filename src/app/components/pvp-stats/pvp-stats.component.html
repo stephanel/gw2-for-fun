@@ -28,9 +28,10 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="clr-col">
             <win-loss-stats
+                [id]="1"
                 [stats]="this.pvpStats?.aggregate"
                 [title]="'Total wins/losses stats'"
             ></win-loss-stats>
@@ -41,6 +42,7 @@
 
         <div class="clr-col" *ngIf="this.elementalistStats">
             <win-loss-stats
+                [id]="2"
                 [stats]="this.elementalistStats"
                 [title]="'Elementalist'"
             ></win-loss-stats>
@@ -48,6 +50,7 @@
 
         <div class="clr-col" *ngIf="this.engineerStats">
             <win-loss-stats
+                [id]="3"
                 [stats]="this.elementalistStats"
                 [title]="'Engineer'"
             ></win-loss-stats>
@@ -55,6 +58,7 @@
 
         <div class="clr-col" *ngIf="this.guardianStats">
             <win-loss-stats
+                [id]="4"
                 [stats]="this.guardianStats"
                 [title]="'Guardian'"
             ></win-loss-stats>
@@ -62,6 +66,7 @@
     
         <div class="clr-col" *ngIf="this.mesmerStats">
             <win-loss-stats
+                [id]="5"
                 [stats]="this.mesmerStats"
                 [title]="'Mesmer'"
             ></win-loss-stats>
@@ -69,6 +74,7 @@
 
         <div class="clr-col" *ngIf="this.necromancerStats">
             <win-loss-stats
+                [id]="6"
                 [stats]="this.necromancerStats"
                 [title]="'Necromancer'"
             ></win-loss-stats>
@@ -76,6 +82,7 @@
 
         <div class="clr-col" *ngIf="this.rangerStats">
             <win-loss-stats
+                [id]="7"
                 [stats]="this.rangerStats"
                 [title]="'Ranger'"
             ></win-loss-stats>
@@ -83,6 +90,7 @@
 
         <div class="clr-col" *ngIf="this.thiefStats">
             <win-loss-stats
+                [id]="8"
                 [stats]="this.thiefStats"
                 [title]="'Thief'"
             ></win-loss-stats>
@@ -90,6 +98,7 @@
 
         <div class="clr-col" *ngIf="this.warriorStats">
             <win-loss-stats
+                [id]="9"
                 [stats]="this.warriorStats"
                 [title]="'Warrior'"
             ></win-loss-stats>
