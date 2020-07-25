@@ -23,6 +23,7 @@ export class PieChartComponent implements OnInit {
         // labels: ['Wins', 'Losses', 'Desertions', 'Byes', 'Forfeits'],
 
     ngOnInit() {
+        // https://canvasjs.com/angular-charts/
         let chart = new CanvasJS.Chart("chartContainer", {
             theme: "light2",
             animationEnabled: true,
