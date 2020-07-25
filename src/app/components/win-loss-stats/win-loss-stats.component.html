@@ -22,6 +22,8 @@
         <div>
             <span class="title"><strong>Forfeits</strong></span>
             <span>{{this.stats?.forfeits}}</span>
-        </div>    
+        </div>
+        
+        <pie-chart [stats]="this.stats"></pie-chart>  
     </div>
 </div>

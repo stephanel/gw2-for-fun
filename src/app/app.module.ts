@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { PvpStatsComponent } from './components/pvp-stats/pvp-stats.component';
 import { WinLossStatsComponent } from './components/win-loss-stats/win-loss-stats.component';
 
@@ -19,6 +20,7 @@ import { RequestInterceptor } from './infrastructure/services/request-intercepto
 @NgModule({
   declarations: [
     AppComponent,
+    PieChartComponent,
     PvpStatsComponent,
     WinLossStatsComponent
   ],

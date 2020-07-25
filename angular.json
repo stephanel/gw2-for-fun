@@ -31,7 +31,8 @@
             "scripts": [
               "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
               "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
-              "node_modules/@clr/icons/clr-icons.min.js"
+              "node_modules/@clr/icons/clr-icons.min.js",
+              "src/assets/js/canvasjs.min.js"
             ]
           },
           "configurations": {
@@ -69,7 +70,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "gw2-for-fun:build",
-            "port": 2401
+            "port": 4201
           },
           "configurations": {
             "production": {
