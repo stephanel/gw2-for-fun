@@ -24,29 +24,57 @@ export class PieChartComponent implements OnInit {
 
     ngOnInit() {
         // https://canvasjs.com/angular-charts/
+
         let chart = new CanvasJS.Chart("chartContainer", {
-            theme: "light2",
             animationEnabled: true,
-            exportEnabled: true,
+            
             title:{
-                text: "Monthly Expense"
+                text:"Fortune 500 Companies by Country"
+            },
+            axisX:{
+                interval: 1
+            },
+            axisY2:{
+                interlacedColor: "rgba(1,77,101,.2)",
+                gridColor: "rgba(1,77,101,.1)",
+                title: "Number of Companies"
             },
             data: [{
-                type: "pie",
-                showInLegend: true,
-                toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
-                indexLabel: "{name} - #percent%",
+                type: "bar",
+                name: "companies",
+                axisYType: "secondary",
+                color: "#014D65",
                 dataPoints: [
-                    { y: 450, name: "Food" },
-                    { y: 120, name: "Insurance" },
-                    { y: 300, name: "Traveling" },
-                    { y: 800, name: "Housing" },
-                    { y: 150, name: "Education" },
-                    { y: 150, name: "Shopping"},
-                    { y: 250, name: "Others" }
+                    { y: 3, label: "Wins" },
+                    { y: 7, label: "Losses" },
+                    { y: 5, label: "Desertions" },
+                    { y: 9, label: "Byes" },
+                    { y: 7, label: "Forfeits" }
                 ]
             }]
         });
+
+        // let chart = new CanvasJS.Chart("chartContainer", {
+        //     theme: "light2",
+        //     animationEnabled: true,
+        //     exportEnabled: false,
+        //     // title:{
+        //     //     text: "Monthly Expense"
+        //     // },
+        //     data: [{
+        //         type: "pie",
+        //         showInLegend: false,
+        //         toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        //         indexLabel: "{name} - #percent%",
+        //         dataPoints: [
+        //             { y: 300, name: "Wins" },
+        //             { y: 120, name: "Losses" },
+        //             { y: 300, name: "Desertions" },
+        //             { y: 800, name: "Byes" },
+        //             { y: 150, name: "Forfeits" },
+        //         ]
+        //     }]
+        // });
             
         chart.render();
     }
