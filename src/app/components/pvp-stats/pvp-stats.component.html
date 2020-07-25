@@ -1,0 +1,185 @@
+<div class="container">
+
+    <div class="clr-row">
+        <div class="clr-col-lg-6 clr-col-12">
+            <div class="card">
+                <div class="card-header">
+                    General stats
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Rank</strong></span>
+                        <span>{{this.pvpStats?.pvp_rank}}</span>
+                    </div>
+                    <div>
+                        <span class="title"><strong>Points</strong></span>
+                        <span>{{this.pvpStats?.pvp_rank_points}}</span>
+                    </div>
+                    <div>
+                        <span class="title"><strong>Rollovers</strong></span>
+                        <span>{{this.pvpStats?.pvp_rank_rollovers}}</span>
+                    </div>    
+                    <div>
+                        <span class="title">&nbsp;</span><span>&nbsp;</span>
+                    </div>    
+                    <div>
+                        <span class="title">&nbsp;</span><span>&nbsp;</span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    
+        <div class="clr-col-lg-6 clr-col-12">
+            <div class="card">
+                <div class="card-header">
+                    Total wins/losses stats
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Wins</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.wins}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Losses</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.losses}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Desertions</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.desertions}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Byes</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.byes}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Forfeits</strong></span>
+                        <span>{{this.pvpStats?.aggregate?.forfeits}}</span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clr-row">
+
+        <div class="clr-col" *ngIf="this.elementalistStats">
+            <div class="card">
+                <div class="card-header">
+                    Elementalist
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Wins</strong></span>
+                        <span>{{this.elementalistStats?.wins}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Losses</strong></span>
+                        <span>{{this.elementalistStats?.losses}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Desertions</strong></span>
+                        <span>{{this.elementalistStats?.desertions}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Byes</strong></span>
+                        <span>{{this.elementalistStats?.byes}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Forfeits</strong></span>
+                        <span>{{this.elementalistStats?.forfeits}}</span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <div class="clr-col" *ngIf="this.engineerStats">
+            <div class="card">
+                <div class="card-header">
+                    Engineer
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Wins</strong></span>
+                        <span>{{this.engineerStats?.wins}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Losses</strong></span>
+                        <span>{{this.engineerStats?.losses}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Desertions</strong></span>
+                        <span>{{this.engineerStats?.desertions}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Byes</strong></span>
+                        <span>{{this.engineerStats?.byes}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Forfeits</strong></span>
+                        <span>{{this.engineerStats?.forfeits}}</span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <div class="clr-col" *ngIf="this.guardianStats">
+            <div class="card">
+                <div class="card-header">
+                    Guardian
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Wins</strong></span>
+                        <span>{{this.guardianStats?.wins}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Losses</strong></span>
+                        <span>{{this.guardianStats?.losses}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Desertions</strong></span>
+                        <span>{{this.guardianStats?.desertions}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Byes</strong></span>
+                        <span>{{this.guardianStats?.byes}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Forfeits</strong></span>
+                        <span>{{this.guardianStats?.forfeits}}</span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    
+        <div class="clr-col" *ngIf="this.mesmerStats">
+            <div class="card">
+                <div class="card-header">
+                    Mesmer
+                </div>
+                <div class="card-block">
+                    <div>
+                        <span class="title"><strong>Wins</strong></span>
+                        <span>{{this.mesmerStats?.wins}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Losses</strong></span>
+                        <span>{{this.mesmerStats?.losses}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Desertions</strong></span>
+                        <span>{{this.mesmerStats?.desertions}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Byes</strong></span>
+                        <span>{{this.mesmerStats?.byes}}</span>
+                    </div>    
+                    <div>
+                        <span class="title"><strong>Forfeits</strong></span>
+                        <span>{{this.mesmerStats?.forfeits}}</span>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

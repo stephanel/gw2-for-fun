@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PvpStatsComponent } from './components/pvp-stats.component';
+import { PvpStatsComponent } from './components/pvp-stats/pvp-stats.component';
 
 import { GW2APICONFIG } from './services/gw2api-pvp-stats.service';
 import { gw2apiConfig } from './gw2api.config';
