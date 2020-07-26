@@ -1,4 +1,4 @@
-import { Gw2ApiConfig } from './models/gw2api-config';
+import { Gw2ApiConfig } from './models/gw2api/gw2api-config';
 
 export const gw2apiConfig: Gw2ApiConfig = {
     baseUrl: 'https://api.guildwars2.com',

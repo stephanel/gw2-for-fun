@@ -1,4 +1,4 @@
-import { Gw2ApiConfig } from '../models/gw2api-config';
+import { Gw2ApiConfig } from '../models/gw2api/gw2api-config';
 
 export class Gw2ApiService
 {

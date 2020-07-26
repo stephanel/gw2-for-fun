@@ -39,60 +39,10 @@
     
     <div class="clr-row">
 
-        <div class="clr-col" *ngIf="this.elementalistStats">
-            <win-loss-stats
-                [stats]="this.elementalistStats"
-                [title]="'Elementalist'"
-            ></win-loss-stats>
-        </div>
+        <win-loss-stats class="clr-col" *ngFor="let statsBlock of statsBlocks"
+            [stats]="statsBlock.stats"
+            [title]="statsBlock.professionKey"
+        ></win-loss-stats>
 
-        <div class="clr-col" *ngIf="this.engineerStats">
-            <win-loss-stats
-                [stats]="this.elementalistStats"
-                [title]="'Engineer'"
-            ></win-loss-stats>
-        </div>
-
-        <div class="clr-col" *ngIf="this.guardianStats">
-            <win-loss-stats
-                [stats]="this.guardianStats"
-                [title]="'Guardian'"
-            ></win-loss-stats>
-        </div>
-    
-        <div class="clr-col" *ngIf="this.mesmerStats">
-            <win-loss-stats
-                [stats]="this.mesmerStats"
-                [title]="'Mesmer'"
-            ></win-loss-stats>
-        </div>
-
-        <div class="clr-col" *ngIf="this.necromancerStats">
-            <win-loss-stats
-                [stats]="this.necromancerStats"
-                [title]="'Necromancer'"
-            ></win-loss-stats>
-        </div>
-
-        <div class="clr-col" *ngIf="this.rangerStats">
-            <win-loss-stats
-                [stats]="this.rangerStats"
-                [title]="'Ranger'"
-            ></win-loss-stats>
-        </div>
-
-        <div class="clr-col" *ngIf="this.thiefStats">
-            <win-loss-stats
-                [stats]="this.thiefStats"
-                [title]="'Thief'"
-            ></win-loss-stats>
-        </div>
-
-        <div class="clr-col" *ngIf="this.warriorStats">
-            <win-loss-stats
-                [stats]="this.warriorStats"
-                [title]="'Warrior'"
-            ></win-loss-stats>
-        </div>
     </div>
 </div>

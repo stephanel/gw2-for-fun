@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gw2ApiPvpStatsService } from '../../services/gw2api-pvp-stats.service';
-import { Gw2ApiPvpStatsResults, WinLossStats } from '../../models/gw2api-pvp-stats-result';
+import { ProfessionStats } from '../../models/profession-stats';
+import { StatsResults } from '../../models/stats-results';
 
 @Component({
     selector: 'pvp-stats',
@@ -9,15 +10,9 @@ import { Gw2ApiPvpStatsResults, WinLossStats } from '../../models/gw2api-pvp-sta
 })
 export class PvpStatsComponent {
 
-    pvpStats: Gw2ApiPvpStatsResults;
-    elementalistStats: WinLossStats;
-    engineerStats: WinLossStats;
-    guardianStats: WinLossStats;
-    mesmerStats: WinLossStats;
-    necromancerStats: WinLossStats;
-    rangerStats: WinLossStats;
-    thiefStats: WinLossStats;
-    warriorStats: WinLossStats;
+    pvpStats: StatsResults;
+
+    statsBlocks: ProfessionStats[];
 
     constructor(private gw2apiPvpStatsService: Gw2ApiPvpStatsService) {
     }
@@ -27,17 +22,24 @@ export class PvpStatsComponent {
             .getData()
             .subscribe(results => {
                 this.pvpStats = results;
+                this.statsBlocks = results.getProfessionsStats();
 
-                const professions = results.professions;
+                // const professions = results.professions;
 
-                this.elementalistStats = professions && professions.elementalist;
-                this.engineerStats = professions && professions.engineer;
-                this.guardianStats = professions && professions.guardian;
-                this.mesmerStats = professions && professions.mesmer;
-                this.necromancerStats = professions && professions.necromancer;
-                this.rangerStats = professions && professions.ranger;
-                this.thiefStats = professions && professions.thief;
-                this.warriorStats = professions && professions.warrior;
+                // if(professions)
+                // {
+                //     this.statsBlocks = [
+                //         { stats: professions.elementalist, professionKey: 'Elementalist' },
+                //         { stats: professions.engineer, professionKey: 'Engineer' },
+                //         { stats: professions.guardian, professionKey: 'Guardian' },
+                //         { stats: professions.mesmer, professionKey: 'Mesmer' },
+                //         { stats: professions.necromancer, professionKey: 'Necromancer' },
+                //         { stats: professions.ranger, professionKey: 'Ranger' },
+                //         { stats: professions.revenant, professionKey: 'Revenant' },
+                //         { stats: professions.thief, professionKey: 'Thief' },
+                //         { stats: professions.warrior, professionKey: 'Warrior' },
+                //     ];
+                // }
             });
     }
 }
